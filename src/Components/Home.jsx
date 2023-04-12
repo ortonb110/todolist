@@ -1,6 +1,29 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
+import axios from "axios";
+
+
+
 
 const Home = () => {
+    const [todoBool, setTodoBool] = useState(false);
+
+    const allTodo = async () => {
+       try {
+        const {data: {getAllTodo}} = await axios.get('/api/v1/todo')
+        if(getAllTodo.length < 1) {
+            document.getElementById('section').innerHTML = '<h2>Todo is empty</h2>'
+        } else {
+            
+        }
+       } catch (error) {
+        
+       }
+    }
+
+useEffect( ()=> {
+
+})
+
   return (
     <main className="w-[35%] mx-auto">
       <form
@@ -18,7 +41,7 @@ const Home = () => {
           Submit
         </button>
       </form>
-      <section>
+      <section id="section">
         <div className="flex justify-between items-center bg-white rounded-lg py-[2rem] px-8 hover:shadow-lg mb-10 transition-all ease-in-out duration-300">
           <div className="flex gap-4">
             <input type="radio" name="completed" />
