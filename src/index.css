@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@layer base {
+    html {
+        font-size: 62.5%;
+    }
+    body {
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        background-color: #F2F4F8;
+    }
+}
